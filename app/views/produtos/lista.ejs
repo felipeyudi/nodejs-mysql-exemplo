@@ -22,5 +22,20 @@
                 <% } %>
             </tr>
         </table>
+        <script>
+
+        
+            var ws = new WebSocket('ws://localhost:3000/novas/promocoes');
+            ws.onmessage = function(data) {
+                //
+            };
+        </script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            socket.on('novaPromocao', function(data) {
+                alert('Livro em promocao'+data.livro.id);
+            });
+        </script>
     </body>
 </html>

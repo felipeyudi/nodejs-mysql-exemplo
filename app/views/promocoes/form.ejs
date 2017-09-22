@@ -1,0 +1,26 @@
+<html>
+	<body>
+		<form action='/promocoes' method="post">
+		<div>
+			<label for="descricao">Descrição</label>
+			<input type="text" name="descricao"/>
+		</div>
+		<div>
+			<select name="livro[id]">
+				<%for (var i = 0; i < lista.length; i++){ %>
+					<option value="<%=lista[i].id%>"><%=lista[i].titulo%></option>
+				<%}%>
+			</select>
+		</div>
+		<div>
+			<label for="desconto">Porcentagem do desconto</label>
+			<input type="number" min="0" step="1" name="desconto"/>
+		</div>
+		<div>
+			<label for="validade">Validade</label>
+			<input type="date"  name="validade" min="2017-01-01"/>
+		</div>
+		<button type="submit">Cadastrar promoção</button>
+		</form>
+	</body>
+</html>
